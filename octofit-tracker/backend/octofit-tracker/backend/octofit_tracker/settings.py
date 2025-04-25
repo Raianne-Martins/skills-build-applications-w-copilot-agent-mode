@@ -7,6 +7,14 @@ SECRET_KEY = 'your-secret-key'
 
 DEBUG = True
 
+# Configuração do MongoDB
+MONGO_CLIENT = MongoClient('localhost', 27017)
+MONGO_DB = MONGO_CLIENT['octofit_db']
+
+# Habilitar CORS
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Permitir todos os hosts
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -87,5 +95,3 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CORS_ALLOW_ALL_ORIGINS = True
