@@ -11,10 +11,16 @@ DEBUG = True
 MONGO_CLIENT = MongoClient('localhost', 27017)
 MONGO_DB = MONGO_CLIENT['octofit_db']
 
-# Habilitar CORS
-CORS_ALLOW_ALL_ORIGINS = True
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'octofit_db',
+        'HOST': 'localhost',
+        'PORT': 27017,
+    }
+}
 
-# Permitir todos os hosts
+CORS_ALLOW_ALL_ORIGINS = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -60,17 +66,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017
-        }
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

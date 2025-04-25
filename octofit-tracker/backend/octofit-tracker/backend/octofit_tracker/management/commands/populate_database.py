@@ -14,8 +14,8 @@ class Command(BaseCommand):
         user5 = User.objects.create(username="sleeptoken", email="sleeptoken@mhigh.edu", password="sleeptokenpassword")
 
         # Test data for teams
-        team1 = Team.objects.create(name="Blue Team", members=[user1.id, user2.id])
-        team2 = Team.objects.create(name="Gold Team", members=[user3.id, user4.id, user5.id])
+        team1 = Team.objects.create(name="Blue Team", members=[user1._id, user2._id])
+        team2 = Team.objects.create(name="Gold Team", members=[user3._id, user4._id, user5._id])
 
         # Test data for activities
         Activity.objects.create(user=user1, activity_type="Cycling", duration=timedelta(hours=1))
